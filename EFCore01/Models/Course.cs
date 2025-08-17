@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,12 @@ namespace EFCore01.Models
         public string Description { get; set; }
 
         public DateTime Duration { get; set; }
-        public int Top_ID { get; set; }
 
+        [ForeignKey(nameof(Top_ID))]
+        public Topic? Topic { get; set; }
+
+        [ForeignKey(nameof(Topic))]
+        public int? Top_ID { get; set; }
 
     }
 }

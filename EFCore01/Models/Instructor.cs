@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,9 @@ namespace EFCore01.Models
         public string Address { get; set; }
 
         public DateTime HourRate { get; set; }
-
-        public int Dept_ID { get; set; }
+        [ForeignKey(nameof(Dept_ID))]
+        public Department? Department { get; set; }
+        [ForeignKey(nameof(Department))]
+        public int? Dept_ID { get; set; }
     }
 }

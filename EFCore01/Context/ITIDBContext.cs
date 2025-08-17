@@ -62,7 +62,7 @@ internal class ITIDBContext : DbContext
         modelBuilder.Entity<Course>(builder =>
         {
             
-            builder.ToTable("Student").HasKey(x => x.Id);
+            builder.ToTable("Course").HasKey(x => x.Id);
 
             builder.Property(x => x.Id).UseIdentityColumn(10,10);
 
@@ -79,7 +79,7 @@ internal class ITIDBContext : DbContext
         //Topic
         modelBuilder.Entity<Topic>(builder =>
         {
-            builder.ToTable("Student").HasKey(x => x.Id);
+            builder.ToTable("Topic").HasKey(x => x.Id);
 
             builder.Property(x => x.Id).UseIdentityColumn(10,10);
 
@@ -89,7 +89,7 @@ internal class ITIDBContext : DbContext
         //Instructor
         modelBuilder.Entity<Instructor>(builder =>
         {
-            builder.ToTable("Student").HasKey(x => x.Id);
+            builder.ToTable("Instructor").HasKey(x => x.Id);
 
             builder.Property(x => x.Id).UseIdentityColumn(10,10);
 
@@ -109,8 +109,8 @@ internal class ITIDBContext : DbContext
         modelBuilder.Entity<Course_Inst>(builder =>
         {
             //student
-            builder.ToTable("Student").HasKey(x => x.inst_ID);
-            builder.ToTable("Student").HasKey(x => x.Course_ID);
+            builder.ToTable("Instructor").HasKey(x => x.inst_ID);
+            builder.ToTable("Course").HasKey(x => x.Course_ID);
 
             builder.Property(x => x.Evaluate).IsRequired(true).HasMaxLength(40).HasColumnType("VarChar");
         });
@@ -121,7 +121,7 @@ internal class ITIDBContext : DbContext
             //student
             builder.ToTable("Student").HasKey(x => x.stud_ID);
 
-            builder.ToTable("Student").HasKey(x => x.Course_ID);
+            builder.ToTable("Course").HasKey(x => x.Course_ID);
 
             builder.Property(x => x.Grade).IsRequired(true).HasMaxLength(3).HasColumnType("int");
         });

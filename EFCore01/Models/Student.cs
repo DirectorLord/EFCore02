@@ -30,6 +30,11 @@ namespace EFCore01.Models
         [Required]
         public int Age { get; set; }
 
-        public string Dep_Id { get; set; }
+        [ForeignKey(nameof(Dep_Id))]
+        public Department? Department { get; set; }
+
+        [ForeignKey(nameof(Department))]
+        public int? Dep_Id { get; set; }
+
     }
 }
