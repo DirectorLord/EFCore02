@@ -69,7 +69,7 @@ namespace EFCore01.Context.Migrations
                     FName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Age = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Age = table.Column<int>(type: "int", nullable: false),
                     Dep_Id = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

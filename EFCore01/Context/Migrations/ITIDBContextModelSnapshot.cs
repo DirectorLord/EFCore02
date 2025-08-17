@@ -117,9 +117,9 @@ namespace EFCore01.Context.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Age")
+                    b.Property<int>("Age")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
                     b.Property<string>("Dep_Id")
                         .IsRequired()
